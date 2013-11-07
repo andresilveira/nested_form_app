@@ -1,0 +1,19 @@
+<%= simple_nested_form_for(@post) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <div id="comment" class="row-fluid">
+      <legend><%= Comment.model_name.human %></legend>
+      <%= f.simple_fields_for :comment do |p| %>
+        <%= render "comment_fields", builder: p %>
+      <% end %>
+    </div><br />
+    <%= f.link_to_add "Add Comment", :comment, class: 'btn', data: { target: "#comment" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
