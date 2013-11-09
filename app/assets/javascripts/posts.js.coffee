@@ -11,9 +11,7 @@ jQuery ->
     fieldsCount += 1
     toggleAddLink()
 
-  # TODO: change to nested:fieldRemoved:financial_tax but it's not being triggered
-  # I've created an issue on https://github.com/ryanb/nested_form/issues/294
-  $(document).on 'nested:fieldRemoved', ->
+  $(document).on 'nested:fieldRemoved:comment', ->
     console.log("removed")
     fieldsCount -= 1
     toggleAddLink()

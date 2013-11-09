@@ -23,4 +23,4 @@ end
 gem 'jquery-rails'
 
 gem 'simple_form'
-gem 'nested_form'#, github: 'ryanb/nested_form'
+gem 'nested_form', github: 'ryanb/nested_form'
